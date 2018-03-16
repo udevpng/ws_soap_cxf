@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>fr.apriarsa.services.cxf.soap</groupId>
+  <artifactId>test</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0</version>
+  
+  <properties>    
+    <java.version>1.8</java.version>  
+    <cxf.version>2.7.9</cxf.version>
+  </properties>
+  
+  <dependencies>      
+    <!-- log4j -->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.14</version>
+        <scope>compile</scope>
+    </dependency>
+
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>		
+		<version>2.7.9</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-javamail_1.4_spec</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-activation_1.1_spec</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http</artifactId>
+		<version>2.7.9</version>
+	</dependency>	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>3.0.0.RELEASE</version>
+	</dependency>
+  </dependencies>
+ 
+	
+	<build>
+		<pluginManagement>
+			<plugins />
+		</pluginManagement>
+		<plugins>			
+		
+			<plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <fork>true</fork>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            	
+			<!-- CXF : wsdl2java 
+			<plugin>
+			    <groupId>org.apache.cxf</groupId>
+			    <artifactId>cxf-codegen-plugin</artifactId>
+			    <version>2.7.9</version>			
+			        
+			    <executions>
+			        <execution>
+			            <id>generate-sources</id>
+			            <phase>generate-sources</phase>
+			            <configuration>
+			                <sourceRoot>${basedir}/src/main/java/</sourceRoot>
+			                <wsdlOptions>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/resources/20140520_XPTO_WS_Standard_Client.wsdl</wsdl>
+			                    </wsdlOption>
+			                </wsdlOptions>
+			            </configuration>
+			            <goals>
+			                <goal>wsdl2java</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+			-->
+				
+			
+           
+		</plugins>
+				
+		
+	</build>
+</project>

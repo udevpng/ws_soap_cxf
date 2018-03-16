@@ -1,0 +1,5 @@
+#Thu Feb 22 10:25:51 CET 2018
+com.ibm.ws.st.core.api.visibility.api=true
+com.ibm.ws.st.core.api.visibility.spec=true
+com.ibm.ws.st.core.api.visibility.ibmapi=true
+com.ibm.ws.st.core.api.visibility.thirdparty=false
