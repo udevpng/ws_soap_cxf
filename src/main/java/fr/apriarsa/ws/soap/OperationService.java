@@ -7,4 +7,7 @@ import javax.jws.WebService;
 public interface OperationService {
 	@WebMethod
 	public int addition(int a, int b);
+	
+	@WebMethod
+	public int soustraction(int a, int b);
 }
