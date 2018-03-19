@@ -1,4 +1,4 @@
-package test;
+package fr.apriarsa.ws.soap.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
